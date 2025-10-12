@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Logo from "../ui/Logo";
 
 const Header = () => {
@@ -8,13 +9,13 @@ const Header = () => {
         <nav className="lg:hidden">
           <ul className="flex gap-16">
             <li>
-              <a href="#">خانه</a>
+              <Link to={"/new"}>یکی بساز</Link>
             </li>
             <li>
-              <a href="#">پست ها</a>
+              <Link to={"/"}>پست ها</Link>
             </li>
             <li>
-              <a href="#">نویسنده وبسایت</a>
+              <Link to={"/edit"}>ویرایش</Link>
             </li>
           </ul>
         </nav>

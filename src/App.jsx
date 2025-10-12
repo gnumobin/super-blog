@@ -6,6 +6,7 @@ import Post from "./pages/Post";
 import "./styles/general.css";
 import NewCard from "./pages/NewCard";
 import ScrollToTop from "./components/utils/ScrollToTop";
+import Edit from "./pages/Edit";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/post" element={<Post />} />
         <Route path="/new" element={<NewCard />} />
-        <Route path="/edit" element={<Post />} />
+        <Route path="/edit" element={<Edit />} />
         {/* <Route path="/car/:id" element={<CarPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/alert" element={<AlertPage />} />
