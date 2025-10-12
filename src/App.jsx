@@ -1,4 +1,4 @@
-import { data, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 import Footer from "./components/layouts/Footer";
 import Header from "./components/layouts/Header";
 import Home from "./pages/Home";
