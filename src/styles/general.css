@@ -70,6 +70,7 @@ html {
 body {
   box-sizing: border-box;
   font-family: vazir;
+  overflow-x: hidden;
 }
 * {
   box-sizing: inherit;
