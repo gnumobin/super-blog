@@ -12,12 +12,15 @@ const BlogCard = ({ data, edit = false }) => {
 
   return (
     <figure
-      className="
-        border border-card-border 
-        rounded-3xl p-6 
-        flex flex-col justify-between 
-        relative
-      "
+      className={`
+        border rounded-3xl p-6 flex flex-col justify-between relative
+        transition-all duration-300
+        ${
+          edit
+            ? "border-2 border-primary bg-primary/10 hover:scale-105"
+            : "border-card-border"
+        }
+      `}
     >
       {/* Blog cover image */}
       <img
@@ -36,19 +39,17 @@ const BlogCard = ({ data, edit = false }) => {
 
       {/* Edit icon (only visible in edit mode) */}
       {edit && (
-        <button
-          type="button"
+        <div
           className="
-            bg-primary 
-            w-fit flex justify-center items-center 
-            text-3xl rounded-full text-white p-4 
-            absolute -top-8 -right-8
-            shadow-md hover:scale-105 transition-transform
+            absolute -top-6 -right-6
+            p-4 bg-primary rounded-full shadow-xl
+            animate-pulse flex items-center justify-center
+            text-4xl text-white
           "
           aria-label="Edit blog post"
         >
           <LuPen />
-        </button>
+        </div>
       )}
     </figure>
   );
