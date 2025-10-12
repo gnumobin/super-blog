@@ -94,7 +94,7 @@ const NewCard = ({ data }) => {
       </form>
 
       {submittedData && (
-        <div className="mt-10 p-4 border border-card-borde6 text-2xl rounded-2xl bg-gray-50">
+        <div className="mt-10 p-4 border border-card-border text-2xl rounded-2xl bg-gray-50">
           <h3 className="text-2xl font-bold mb-2">بلاگ ایجاد شده:</h3>
           <p>
             <strong>عنوان:</strong> {submittedData.title}
