@@ -27,19 +27,20 @@ const Header = () => {
         </button>
 
         {/* Desktop navigation */}
-        <nav className="flex lg:hidden gap-8">
-          <Link
-            to="/new"
-            className="hover:text-primary hover:scale-105 transition-all duration-300"
-          >
-            یکی بساز
-          </Link>
+        <nav className="flex lg:hidden gap-12">
           <Link
             to="/"
             className="hover:text-primary hover:scale-105 transition-all duration-300"
           >
             پست‌ها
           </Link>
+          <Link
+            to="/new"
+            className="hover:text-primary hover:scale-105 transition-all duration-300"
+          >
+            یکی بساز
+          </Link>
+
           <Link
             to="/edit"
             className="hover:text-primary hover:scale-105 transition-all duration-300"
