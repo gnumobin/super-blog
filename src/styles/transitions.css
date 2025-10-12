@@ -1,0 +1,19 @@
+/* pageSlide.css */
+.page-enter {
+  transform: translateX(100%);
+  opacity: 0.8;
+}
+.page-enter-active {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.page-exit {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.page-exit-active {
+  transform: translateX(-100%);
+  opacity: 0.8;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}

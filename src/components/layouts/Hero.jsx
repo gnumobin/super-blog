@@ -7,7 +7,7 @@ const Hero = () => {
           text-black 
           text-center 
           font-semibold 
-          text-3xl sm:text-2xl
+          text-6xl
           transition-transform duration-300
           hover:scale-105 hover:text-primary
         "

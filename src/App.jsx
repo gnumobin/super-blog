@@ -1,13 +1,16 @@
-import { Route, Routes } from "react-router";
-import Footer from "./components/layouts/Footer";
+import { Routes, Route, useLocation } from "react-router";
+import { AnimatePresence, motion } from "framer-motion";
+
 import Header from "./components/layouts/Header";
+import Footer from "./components/layouts/Footer";
 import Home from "./pages/Home";
 import Post from "./pages/Post";
-import "./styles/general.css";
 import NewCard from "./pages/NewCard";
-import ScrollToTop from "./components/utils/ScrollToTop";
 import EditList from "./pages/EditList";
 import Edit from "./pages/Edit";
+
+import ScrollToTop from "./components/utils/ScrollToTop";
+import "./styles/general.css";
 import { useState } from "react";
 
 function App() {
@@ -79,20 +82,73 @@ function App() {
       img: "https://picsum.photos/id/1062/800/600",
     },
   ]);
+
+  const location = useLocation();
+
+  const pageVariants = {
+    initial: { x: "100%", opacity: 0.8 },
+    animate: { x: 0, opacity: 1 },
+    exit: { x: "-100%", opacity: 0.8 },
+  };
+
+  const pageTransition = {
+    type: "spring",
+    ease: [0.22, 1, 0.36, 1],
+    duration: 0.3,
+  };
+
   return (
-    <div>
+    <div className="relative overflow-x-hidden">
       <Header />
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home data={data} />} />
-        <Route path="/post" element={<Post />} />
-        <Route path="/new" element={<NewCard data={data} />} />
-        <Route path="/edit" element={<EditList data={data} />} />
-        <Route
-          path="/editOne"
-          element={<Edit data={data} setData={setData} />}
-        />
-      </Routes>
+
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
+              <motion.div
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Home data={data} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/edit"
+            element={
+              <motion.div
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <EditList data={data} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/new"
+            element={
+              <motion.div
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <NewCard data={data} />
+              </motion.div>
+            }
+          />
+        </Routes>
+      </AnimatePresence>
+
       <Footer />
     </div>
   );
