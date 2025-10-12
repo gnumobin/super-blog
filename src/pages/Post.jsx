@@ -1,26 +1,23 @@
 import AdsCard from "../components/ui/AdsCard";
 import Author from "../components/ui/Author";
 import Tag from "../components/ui/Tag";
-
-const author = {
-  name: "نگار ملکی",
-  img: "https://randomuser.me/api/portraits/women/28.jpg",
-  date: "۱۴۰۴ مهر ۲۲",
-};
+import { useLocation } from "react-router";
 
 const Post = () => {
+  const location = useLocation();
+  const postData = location.state?.postData;
   return (
     <figure className="container text-secondary">
       <div className="mt-24"></div>
-      <Tag>نمیدونم این چه دسته بندی میشه</Tag>
+      <Tag>{postData.tag}</Tag>
       <h1 className=" text-black font-semibold text-6xl mt-6">
-        چطور با مدیریت زمان، استرس را کاهش دهیم؟
+        {postData.title}
       </h1>
-      <Author author={author} />
+      <Author author={postData.author} />
       <img
-        src="https://picsum.photos/id/1050/800/600"
+        src={postData.img}
         alt="post"
-        className="rounded-2xl mt-12 w-full h-[46rem] object-cover"
+        className="rounded-2xl mt-12 w-full h-[46rem] object-cover object-top"
       />
       <figcaption className="text-3xl kaboom flex flex-col gap-12">
         <p>
@@ -54,9 +51,9 @@ const Post = () => {
           </p>
         </div>
         <img
-          src="https://picsum.photos/id/1050/800/600"
+          src={postData.img}
           alt="post"
-          className="rounded-2xl mt-12 w-full mb-12 h-[46rem] object-cover"
+          className="rounded-2xl mt-12 w-full mb-12 h-[46rem] object-top object-cover"
         />
         <AdsCard />
         <div className="flex flex-col gap-6">

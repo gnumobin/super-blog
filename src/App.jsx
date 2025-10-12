@@ -4,14 +4,19 @@ import Header from "./components/layouts/Header";
 import Home from "./pages/Home";
 import Post from "./pages/Post";
 import "./styles/general.css";
+import NewCard from "./pages/NewCard";
+import ScrollToTop from "./components/utils/ScrollToTop";
 
 function App() {
   return (
     <div>
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post" element={<Post />} />
+        <Route path="/new" element={<NewCard />} />
+        <Route path="/edit" element={<Post />} />
         {/* <Route path="/car/:id" element={<CarPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/alert" element={<AlertPage />} />
