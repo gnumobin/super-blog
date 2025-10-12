@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 
-const Edit = () => {
+const EditPost = ({ setData }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -16,6 +16,7 @@ const Edit = () => {
       date: "",
     },
     img: "",
+    id: null,
   });
 
   useEffect(() => {
@@ -28,7 +29,6 @@ const Edit = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     if (name.startsWith("author.")) {
       const authorField = name.split(".")[1];
       setFormData((prev) => ({
@@ -48,43 +48,43 @@ const Edit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("ویرایش شد:", formData);
+
+    setData((prevData) =>
+      prevData.map((item) => (item.id === formData.id ? { ...formData } : item))
+    );
+
     alert("ویرایش با موفقیت انجام شد!");
     navigate(-1);
   };
 
   return (
-    <section className="container mx-auto my-12 max-w-4xl p-4">
-      <h2 className="text-2xl font-bold mb-6">ویرایش مطلب</h2>
+    <section className="container mx-auto my-12 max-w-4xl p-4 text-2xl">
+      <h2 className="text-2xl font-bold mb-12">ویرایش مطلب</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <label>
-          <span className="font-semibold text-black text-3xl mb-4 inline-block">
-            عنوان:
-          </span>
+          <span className="font-semibold text-black text-3xl"> عنوان:</span>
           <input
             type="text"
             name="title"
             value={formData.title}
             onChange={handleChange}
-            className="w-full border border-card-border p-4 px-8 text-2xl rounded-2xl"
+            className="w-full border border-card-border p-4 rounded-2xl mt-4"
           />
         </label>
 
         <label>
-          <span className="font-semibold text-black text-3xl mb-4 inline-block">
-            تگ:
-          </span>
+          <span className="font-semibold text-black text-3xl"> تگ:</span>
           <input
             type="text"
             name="tag"
             value={formData.tag}
             onChange={handleChange}
-            className="w-full border border-card-border p-4 px-8 text-2xl rounded-2xl"
+            className="w-full border border-card-border p-4 rounded-2xl mt-4"
           />
         </label>
 
         <label>
-          <span className="font-semibold text-black text-3xl mb-4 inline-block">
+          <span className="font-semibold text-black text-3xl">
             نام نویسنده:
           </span>
           <input
@@ -92,12 +92,12 @@ const Edit = () => {
             name="author.name"
             value={formData.author.name}
             onChange={handleChange}
-            className="w-full border border-card-border p-4 px-8 text-2xl rounded-2xl"
+            className="w-full border border-card-border p-4 rounded-2xl mt-4"
           />
         </label>
 
         <label>
-          <span className="font-semibold text-black text-3xl mb-4 inline-block">
+          <span className="font-semibold text-black text-3xl">
             تصویر نویسنده (آدرس URL):
           </span>
           <input
@@ -105,25 +105,23 @@ const Edit = () => {
             name="author.img"
             value={formData.author.img}
             onChange={handleChange}
-            className="w-full border border-card-border p-4 px-8 text-2xl rounded-2xl"
+            className="w-full border border-card-border p-4 rounded-2xl mt-4"
           />
         </label>
 
         <label>
-          <span className="font-semibold text-black text-3xl mb-4 inline-block">
-            تاریخ:
-          </span>
+          <span className="font-semibold text-black text-3xl"> تاریخ:</span>
           <input
             type="text"
             name="author.date"
             value={formData.author.date}
             onChange={handleChange}
-            className="w-full border border-card-border p-4 px-8 text-2xl rounded-2xl"
+            className="w-full border border-card-border p-4 rounded-2xl mt-4"
           />
         </label>
 
         <label>
-          <span className="font-semibold text-black text-3xl mb-4 inline-block">
+          <span className="font-semibold text-black text-3xl">
             تصویر مطلب (آدرس URL):
           </span>
           <input
@@ -131,13 +129,13 @@ const Edit = () => {
             name="img"
             value={formData.img}
             onChange={handleChange}
-            className="w-full border border-card-border p-4 px-8 text-2xl rounded-2xl"
+            className="w-full border border-card-border p-4 rounded-2xl mt-4"
           />
         </label>
 
         <button
           type="submit"
-          className="bg-primary text-2xl font-semibold cursor-pointer text-white p-6 py-4 mt-4 rounded-2xl hover:bg-blue-700"
+          className="bg-primary text-white p-4 rounded-2xl mt-6 cursor-pointer hover:bg-blue-700"
         >
           ذخیره تغییرات
         </button>
@@ -146,4 +144,4 @@ const Edit = () => {
   );
 };
 
-export default Edit;
+export default EditPost;

@@ -19,9 +19,9 @@ const BlogCard = ({ data, edit = false }) => {
         <Author author={author} />
       </figcaption>
       {edit && (
-        <Link className="bg-primary w-fit flex justify-center items-center text-3xl rounded-full text-white p-4 absolute -top-8 -right-8">
+        <div className="bg-primary w-fit flex justify-center items-center text-3xl rounded-full text-white p-4 absolute -top-8 -right-8">
           <LuPen />
-        </Link>
+        </div>
       )}
     </figure>
   );
