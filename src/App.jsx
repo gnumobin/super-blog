@@ -128,7 +128,21 @@ function App() {
                 variants={pageVariants}
                 transition={pageTransition}
               >
-                <EditList data={data} />
+                <EditList data={data} setData={setData} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/editOne"
+            element={
+              <motion.div
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Edit data={data} setData={setData} />
               </motion.div>
             }
           />
@@ -143,6 +157,20 @@ function App() {
                 transition={pageTransition}
               >
                 <NewCard data={data} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/post"
+            element={
+              <motion.div
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Post data={data} />
               </motion.div>
             }
           />
