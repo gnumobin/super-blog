@@ -1,0 +1,19 @@
+@font-face {
+    font-family: vazir;
+    src: url(../assets/fonts/Vazir.ttf);
+}
+
+html {
+    font-size: 62.5%;
+}
+body {
+    box-sizing: border-box;
+    font-family: vazir;
+}
+* {
+    box-sizing: inherit;
+}
+
+h3 {
+    line-height: 1.6;
+}
