@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const NewCard = () => {
+const NewCard = ({ data }) => {
   const [title, setTitle] = useState("");
   const [tag, setTag] = useState("");
   const [authorName, setAuthorName] = useState("");
@@ -23,10 +23,10 @@ const NewCard = () => {
       img,
     };
 
-    // اینجا می‌تونی به سرور ارسال کنی یا در state بالا اضافه کنی
+    data.push(newBlog);
+
     setSubmittedData(newBlog);
 
-    // خالی کردن فرم
     setTitle("");
     setTag("");
     setAuthorName("");
