@@ -31,7 +31,7 @@ const NewCard = ({ data }) => {
   };
 
   return (
-    <div className="container mx-auto p-6 max-w-4xl">
+    <div className="container mx-auto p-6 max-w-7xl">
       <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
         ایجاد بلاگ جدید
       </h2>
@@ -102,7 +102,7 @@ const NewCard = ({ data }) => {
           col-span-2 lg:col-span-1
           bg-blue-500 text-white py-5 text-2xl font-semibold
           rounded-2xl hover:bg-blue-600 hover:shadow-2xl
-          hover:scale-[1.03] transition-all duration-300
+          hover:scale-[1.03] transition-all duration-300 cursor-pointer
         "
           >
             ایجاد بلاگ

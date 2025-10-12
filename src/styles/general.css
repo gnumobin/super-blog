@@ -107,3 +107,55 @@ p {
     font-size: 58%;
   }
 }
+
+.edit-shake {
+  animation: ios-wiggle 1.2s infinite ease-in-out alternate;
+  transform-origin: center center;
+}
+
+@keyframes ios-wiggle {
+  0% {
+    transform: rotate(-0.7deg) translateY(0px);
+  }
+  25% {
+    transform: rotate(0.7deg) translateY(-1px);
+  }
+  50% {
+    transform: rotate(-0.5deg) translateY(1px);
+  }
+  75% {
+    transform: rotate(0.5deg) translateY(-1px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+}
+
+.edit-shake:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes jelly-text {
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+  30% {
+    transform: scaleX(1.2) scaleY(0.9);
+  }
+  60% {
+    transform: scaleX(0.9) scaleY(1.1);
+  }
+  80% {
+    transform: scaleX(1.05) scaleY(0.95);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+
+.nav-item.active span {
+  display: inline-block;
+  animation: jelly-text 0.5s forwards;
+}

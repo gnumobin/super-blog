@@ -17,7 +17,7 @@ const BlogCard = ({ data, edit = false }) => {
         transition-all duration-300
         ${
           edit
-            ? "border-2 border-primary bg-primary/10 hover:scale-105"
+            ? "border-2 border-primary bg-primary/10 hover:scale-105 edit-shake"
             : "border-card-border"
         }
       `}

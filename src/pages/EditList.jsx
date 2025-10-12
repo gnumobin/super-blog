@@ -22,23 +22,6 @@ const EditList = ({ data }) => {
           </Link>
         ))}
       </div>
-
-      {/* Optional load more button */}
-      {data.length > 0 && (
-        <button
-          type="button"
-          className="
-            border border-gray-300
-            w-fit m-auto mt-8
-            font-medium text-2xl text-secondary 
-            py-5 px-8 rounded-xl 
-            hover:bg-gray-100 transition-colors
-            active:scale-95
-          "
-        >
-          بارگذاری بقیه
-        </button>
-      )}
     </section>
   );
 };
