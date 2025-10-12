@@ -10,7 +10,7 @@ const ArticleCard = () => {
   return (
     <div className="article-card rounded-2xl p-16 text-white">
       <Tag>تکنولوژی</Tag>
-      <h1 className="text-white text-6xl font-semibold mt-6 mb-1.5">
+      <h1 className="text-white text-6xl font-semibold mt-6 mb-1.5 w-1/2">
         ۵ دستور غذای سریع و سالم برای روزهای شلوغ
       </h1>
       <Author author={author} />
