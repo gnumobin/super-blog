@@ -7,6 +7,7 @@ import "./styles/general.css";
 import NewCard from "./pages/NewCard";
 import ScrollToTop from "./components/utils/ScrollToTop";
 import EditList from "./pages/EditList";
+import Edit from "./pages/Edit";
 
 const data = [
   {
@@ -87,6 +88,7 @@ function App() {
         <Route path="/post" element={<Post />} />
         <Route path="/new" element={<NewCard data={data} />} />
         <Route path="/edit" element={<EditList data={data} />} />
+        <Route path="/editOne" element={<Edit />} />
       </Routes>
       <Footer />
     </div>
