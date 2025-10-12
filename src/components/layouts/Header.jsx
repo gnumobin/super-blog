@@ -5,7 +5,7 @@ const Header = () => {
     <header className=" text-2xl text-[#3B3C4A] font-medium pt-12">
       <div className="container flex justify-between items-center">
         <Logo />
-        <nav>
+        <nav className="lg:hidden">
           <ul className="flex gap-16">
             <li>
               <a href="#">خانه</a>

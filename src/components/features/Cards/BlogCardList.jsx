@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import BlogCard from "./BlogCard";
 
 const data = [
@@ -42,7 +43,7 @@ const data = [
     img: "https://picsum.photos/id/1041/800/600",
   },
   {
-    title: "آخرین نوآوری‌های هوش مصنوعی و تاثیر آن بر زندگی روزمره",
+    title: "آخرین نوآوری‌های هوش مصنوعی و تاثیر آن بر زندگی ",
     tag: "تکنولوژی",
     author: {
       name: "رعنا موسوی",
@@ -66,9 +67,11 @@ const data = [
 const BlogCardList = () => {
   return (
     <section className="container flex flex-col mb-36">
-      <div className="my-20 gap-8 grid grid-cols-[repeat(auto-fit,minmax(36rem,1fr))]">
+      <div className="my-20 gap-8 grid grid-cols-[repeat(auto-fit,minmax(30rem,1fr))]">
         {data.map((data) => (
-          <BlogCard data={data} />
+          <Link to={"/post"}>
+            <BlogCard data={data} />
+          </Link>
         ))}
       </div>
       <button className="border w-fit m-auto font-medium text-2xl text-secondary py-5 px-8 rounded-xl cursor-pointer">

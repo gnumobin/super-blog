@@ -8,8 +8,15 @@
     --color-black: #181A2A;
 }
 
+/* Convert to first desktop approach */
+@custom-variant 2xl (@media (max-width: 96em));
+@custom-variant xl (@media (max-width: 80em));
+@custom-variant lg (@media (max-width: 64em));
+@custom-variant md (@media (max-width: 48em));
+@custom-variant sm (@media (max-width: 40em));
+
 @utility container {
-    max-width: 114rem;
+    max-width: 104rem;
     padding: 0 1rem;
     margin: 0 auto;
 }

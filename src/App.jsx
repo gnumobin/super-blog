@@ -1,9 +1,7 @@
-import ArticleCard from "./components/features/Cards/ArticleCard";
-import BlogCardList from "./components/features/Cards/BlogCardList";
+import { Route, Routes } from "react-router";
 import Footer from "./components/layouts/Footer";
 import Header from "./components/layouts/Header";
-import Hero from "./components/layouts/Hero";
-import AdsCard from "./components/ui/AdsCard";
+import Home from "./pages/Home";
 import Post from "./pages/Post";
 import "./styles/general.css";
 
@@ -11,13 +9,19 @@ function App() {
   return (
     <div>
       <Header />
-      <Hero />
-      <ArticleCard />
-      <BlogCardList />
-      <AdsCard />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/post" element={<Post />} />
+        {/* <Route path="/car/:id" element={<CarPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/alert" element={<AlertPage />} />
+        <Route path="/panel" element={<Login />} /> */}
+      </Routes>
       <Footer />
-      {/* <Header /> */}
-      {/* <Post /> */}
+      {/* <Header />
+      <Home />
+      <Post />
+      <Footer /> */}
     </div>
   );
 }

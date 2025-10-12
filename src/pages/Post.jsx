@@ -10,7 +10,7 @@ const author = {
 
 const Post = () => {
   return (
-    <figure className="container text-secondary max-w-[98rem]">
+    <figure className="container text-secondary">
       <div className="mt-24"></div>
       <Tag>نمیدونم این چه دسته بندی میشه</Tag>
       <h1 className=" text-black font-semibold text-6xl mt-6">
@@ -20,7 +20,7 @@ const Post = () => {
       <img
         src="https://picsum.photos/id/1050/800/600"
         alt="post"
-        className="rounded-2xl mt-12 w-full"
+        className="rounded-2xl mt-12 w-full h-[46rem] object-cover"
       />
       <figcaption className="text-3xl kaboom flex flex-col gap-12">
         <p>
@@ -56,7 +56,7 @@ const Post = () => {
         <img
           src="https://picsum.photos/id/1050/800/600"
           alt="post"
-          className="rounded-2xl mt-12 w-full mb-12"
+          className="rounded-2xl mt-12 w-full mb-12 h-[46rem] object-cover"
         />
         <AdsCard />
         <div className="flex flex-col gap-6">

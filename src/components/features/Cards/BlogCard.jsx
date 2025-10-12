@@ -8,7 +8,7 @@ const BlogCard = ({ data }) => {
       <img
         src={img}
         alt="picture of blog post"
-        className="rounded-xl w-full h-96"
+        className="rounded-xl w-full h-76 object-cover"
         draggable="false"
       />
       <figcaption className="mt-9 text-secondary">
