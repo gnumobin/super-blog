@@ -2,7 +2,16 @@
 
 @theme {
     --color-card-border: #E8E8EA;
+    --color-primary: #4B6BFB;
+    --color-primary-thin: rgba(75, 107, 251, 0.1);
     --color-secondary: #8c8c8c;
+    --color-black: #181A2A;
+}
+
+@utility container {
+    max-width: 114rem;
+    padding: 0 1rem;
+    margin: 0 auto;
 }
 
 body {

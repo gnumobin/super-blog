@@ -1,17 +1,20 @@
-import mainImg from "../../../assets/cards/1.jpg";
 import Author from "../../ui/Author";
 import Tag from "../../ui/Tag";
 
-const BlogCard = () => {
+const BlogCard = ({ data }) => {
+  const { tag, title, author, img } = data;
   return (
-    <figure className="border border-card-border rounded-3xl p-6 flex flex-col">
-      <img src={mainImg} alt="picture of blog post" draggable="false" />
+    <figure className="border border-card-border rounded-3xl p-6 flex flex-col justify-between">
+      <img
+        src={img}
+        alt="picture of blog post"
+        className="rounded-xl w-full h-full"
+        draggable="false"
+      />
       <figcaption className="mt-9">
-        <Tag>سبک زندگی</Tag>
-        <h3 className="text-4xl mt-8 font-semibold">
-          آیفون ۱۷ پرو به تازگی با قیمت خیلی زیاد وارد بازار ایران شده است
-        </h3>
-        <Author />
+        <Tag>{tag}</Tag>
+        <h3 className="text-black text-4xl mt-8 font-semibold">{title}</h3>
+        <Author author={author} />
       </figcaption>
     </figure>
   );
