@@ -76,13 +76,17 @@ body {
     box-sizing: inherit;
 }
 
-h3,h1 {
+h3,h1, p {
     line-height: 1.6;
 }
+
 
 .article-card {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(https://picsum.photos/id/1050/800/600);
 background-size: cover;
 background-position: center;
 
+}
+.kaboom {
+  margin-top: 3.2rem;
 }

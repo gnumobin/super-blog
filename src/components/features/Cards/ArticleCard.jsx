@@ -6,6 +6,7 @@ const author = {
   img: "https://randomuser.me/api/portraits/women/28.jpg",
   date: "۱۴۰۴ مهر ۲۲",
 };
+
 const ArticleCard = () => {
   return (
     <div className="article-card rounded-2xl p-16 text-white">

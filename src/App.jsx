@@ -3,6 +3,7 @@ import BlogCardList from "./components/features/Cards/BlogCardList";
 import Header from "./components/layouts/Header";
 import Hero from "./components/layouts/Hero";
 import AdsCard from "./components/ui/AdsCard";
+import Post from "./pages/Post";
 import "./styles/general.css";
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
       <ArticleCard />
       <BlogCardList />
       <AdsCard />
+      {/* <Header /> */}
+      {/* <Post /> */}
     </div>
   );
 }

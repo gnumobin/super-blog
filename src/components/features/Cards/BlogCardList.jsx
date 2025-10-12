@@ -65,7 +65,7 @@ const data = [
 
 const BlogCardList = () => {
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col mb-36">
       <div className="my-20 gap-8 grid grid-cols-[repeat(auto-fit,minmax(36rem,1fr))]">
         {data.map((data) => (
           <BlogCard data={data} />
