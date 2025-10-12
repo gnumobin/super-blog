@@ -1,6 +1,6 @@
 const Author = ({ author }) => {
   return (
-    <div className="flex items-center mt-8 text-secondary text-2xl">
+    <div className="flex items-center mt-8 text-2xl">
       <img
         src={author.img}
         alt="portrait of author of quote"

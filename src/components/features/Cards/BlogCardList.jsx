@@ -65,11 +65,16 @@ const data = [
 
 const BlogCardList = () => {
   return (
-    <div className="container gap-8 grid grid-cols-[repeat(auto-fit,minmax(36rem,1fr))]">
-      {data.map((data) => (
-        <BlogCard data={data} />
-      ))}
-    </div>
+    <section className="flex flex-col">
+      <div className="my-20 gap-8 grid grid-cols-[repeat(auto-fit,minmax(36rem,1fr))]">
+        {data.map((data) => (
+          <BlogCard data={data} />
+        ))}
+      </div>
+      <button className="border w-fit m-auto font-medium text-2xl text-secondary py-5 px-8 rounded-xl cursor-pointer">
+        بارگذاری بقیه
+      </button>
+    </section>
   );
 };
 
